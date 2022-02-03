@@ -75,7 +75,7 @@ func (th *vdsoTimehands) getHPETTimecounter() (uint32, bool) {
 //go:nosplit
 func (th *vdsoTimehands) getTimecounter() (uint32, bool) {
 	switch th.algo {
-	case _VDSO_TH_ALGO_X86_TSC:
+/*	case _VDSO_TH_ALGO_X86_TSC:
 		return th.getTSCTimecounter(), true
 	case _VDSO_TH_ALGO_X86_HPET:
 		var (
@@ -86,7 +86,7 @@ func (th *vdsoTimehands) getTimecounter() (uint32, bool) {
 			tc, ok = th.getHPETTimecounter()
 		})
 		return tc, ok
-	default:
+*/	default:
 		return 0, false
 	}
 }
